@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/toolbar" />
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical"
+        android:layout_below="@id/toolbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:fadingEdge="vertical"
+            android:layout_marginTop="25dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="检查时间"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/checkTime" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left" app:met_minCharacters="1"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="是否为挂车"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/isGua" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="通行证编号"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/txzNo" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="行驶证条形码"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/driverCode" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="驾驶人驾驶证号"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/tel" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="驾驶人姓名"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/driverName" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="驾驶人下次体检日期"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/nextCheckTime" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="驾驶人驾驶证条形码"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/driverCode2" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="驾驶人驾驶资格"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/zg" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="押运员姓名"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/yyrxm" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="押运员押运证"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/yyz" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="押运员电话"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/yydh" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="供货厂家名称"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ghcjmc" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="供货厂家联系人"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ghcjlxr" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="供货厂家电话"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ghcjdh" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="核载质量"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/hzzl" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="实载质量"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/szzl"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="企业等级"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/qydj"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="货物性质"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/hwxz"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="车辆下次检验日期"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/clxcjyrq"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="安全设施"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/aqss"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="轮胎磨损"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ltms"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="违法记录"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/wfjl"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="登记民警"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/djmj"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="源头管理民警"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ytglmj"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="应急处理办法"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/yjcli"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:text="备注"
+                    android:textSize="@dimen/title_size" android:textColor="@color/text" android:alpha="0.57"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
+                    android:layout_marginTop="@dimen/item_icon_left"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/bz"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left" android:layout_marginBottom="30dp"
+                    android:textSize="@dimen/text_size" android:textColor="@color/text"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <ImageButton
+        android:id="@+id/fab_button"
+        android:transitionName="fab"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="-28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_round"
+        android:stateListAnimator="@anim/fab_anim"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:scaleType="fitCenter"/>
+
+</RelativeLayout>

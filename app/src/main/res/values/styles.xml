@@ -1,0 +1,287 @@
+<resources>
+    <style name="AppThemeBase" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorAccent">@color/theme_accent</item>
+        <item name="android:windowBackground">@color/theme_window_background</item>
+        <item name="android:alertDialogTheme">@style/BaseTheme.Dialog</item>
+        <item name="android:textColorPrimary">@color/theme_window_background</item>
+    </style>
+    <style name="AppTheme" parent="AppThemeBase"/>
+    <style name="AppTheme.Welcome" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="colorPrimaryDark">@color/welcomeColorPrimaryDark</item>
+    </style>
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="BaseTheme.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/theme_default_primary</item>
+        <item name="colorPrimaryDark">@color/theme_default_primary_dark</item>
+        <item name="colorAccent">@color/theme_accent</item>
+    </style>
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="MyDialogStyleBottom" parent="android:Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+    <style name="MyStyle" parent="android:Animation">
+        //进入时的动画
+        <item name="@android:windowEnterAnimation">@anim/head_in</item>
+        //退出时的动画
+        <item name="@android:windowExitAnimation">@anim/head_out</item>
+    </style>
+    <style name="IndexFont">
+        <item name="android:textSize">@dimen/index_text_size_large</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonBar">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@android:drawable/bottom_bar</item>
+    </style>
+    <style name="CommonBtnTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="CommonBtnAppearance" parent="@style/CommonBtnTextAppearance">
+        <item name="android:background">@drawable/common_btn_blue_selector</item>
+    </style>
+    <style name="ButtonBarButton" />
+    <style name="CommonBigFont">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+    </style>
+    <style name="CommonMidFont">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+    </style>
+    <style name="CommonMidWhiteFont">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="CommonSmallWhiteFont">
+        <item name="android:textSize">@dimen/common_text_size_sub</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="CommonMiniWhiteFont">
+        <item name="android:textSize">@dimen/common_text_size_mini</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="ErrorIndicatorSmallFont">
+        <item name="android:textSize">@dimen/common_text_size_sub</item>
+        <item name="android:textColor">#ffff0000</item>
+    </style>
+    <style name="MainTitleFont">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+        <item name="android:textColor">#ff53575b</item>
+    </style>
+    <style name="MainCheckStatusInfoStyle">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ff3a96fa</item>
+    </style>
+    <style name="MainSpeedFont">
+        <item name="android:textSize">@dimen/common_text_size_sub</item>
+        <item name="android:textColor">#ff8a8d91</item>
+    </style>
+    <style name="MainCheckStatusErrorYellow">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ffd9870e</item>
+    </style>
+    <style name="MainCheckStatusErrorRed">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ffff2d2d</item>
+    </style>
+    <style name="MainCheckStatusNotConnect">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ff3a96fa</item>
+    </style>
+    <style name="MainCheckStatusSuccess">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ff3a96fa</item>
+    </style>
+    <style name="MainSpeedDividerFont">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ff8a8d91</item>
+    </style>
+    <style name="MainFunctionTitleFont">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ff53575b</item>
+    </style>
+    <style name="MainFunctionDetailFont">
+        <item name="android:textSize">@dimen/common_text_size_sub</item>
+        <item name="android:textColor">#ff8a8b91</item>
+    </style>
+    <style name="TitleBarFont">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+    </style>
+    <style name="StartupLoginFont">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+        <item name="android:textColor">#ff3a96fa</item>
+    </style>
+    <style name="ConnectDeviceListItemFont">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+    </style>
+    <style name="ConnectDeviceDetailMacFont">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">#ff2a525f</item>
+    </style>
+    <style name="NetDisk" />
+    <style name="NetDisk.TextAppearance" parent="@style/NetDisk">
+        <item name="android:textColor">@color/text_default</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Huge" parent="@style/NetDisk.TextAppearance">
+        <item name="android:textSize">20.0dip</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Large" parent="@style/NetDisk.TextAppearance">
+        <item name="android:textSize">18.0dip</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Large.White" parent="@style/NetDisk.TextAppearance.Large">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Middle" parent="@style/NetDisk.TextAppearance">
+        <item name="android:textSize">15.0dip</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Middle.Gray" parent="@style/NetDisk.TextAppearance.Middle">
+        <item name="android:textColor">@drawable/gray_white_reverse_drawable</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Middle.White" parent="@style/NetDisk.TextAppearance.Middle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Small" parent="@style/NetDisk.TextAppearance">
+        <item name="android:textSize">12.0dip</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content" parent="@style/NetDisk.TextAppearance">
+        <item name="android:textSize">16.0dip</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content.Gray" parent="@style/NetDisk.TextAppearance.Content">
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content.White" parent="@style/NetDisk.TextAppearance.Content">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content.Red" parent="@style/NetDisk.TextAppearance.Content">
+        <item name="android:textColor">@color/color_red</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content.BlackWhiteReverse" parent="@style/NetDisk.TextAppearance.Content">
+        <item name="android:textColor">@drawable/black_white_reverse_drawable</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content.Blue" parent="@style/NetDisk.TextAppearance.Content">
+        <item name="android:textColor">@color/progress_blue</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Content.loginOtherAuth" parent="@style/NetDisk.TextAppearance.Content">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@color/login_other_auth</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Middle.EmptyInfo" parent="@style/NetDisk.TextAppearance.Middle">
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Middle.TitleWhite" parent="@style/NetDisk.TextAppearance.Middle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NetDisk.TextAppearance.Huge.TitleWhite" parent="@style/NetDisk.TextAppearance.Huge">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="CommonEditTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+        <item name="android:textColorHint">@color/common_text_color_sub</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/common_edit_bg_normal</item>
+        <item name="android:paddingLeft">@dimen/common_edit_padding_left</item>
+        <item name="android:paddingRight">@dimen/common_edit_padding_right</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="CommonEditTextAppearanceNoBackGround">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+        <item name="android:textColorHint">@color/common_text_color_sub</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">@dimen/common_edit_padding_left</item>
+        <item name="android:paddingRight">@dimen/common_edit_padding_right</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="CommonEditTextPwdAppearance">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+        <item name="android:textColorHint">@color/common_text_color_sub</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">@dimen/common_edit_padding_left</item>
+        <item name="android:paddingRight">@dimen/common_edit_padding_right</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">64</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+    <style name="CommonEditTextPwdIconEyeAppearance">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@drawable/common_edit_eye_selector</item>
+        <item name="android:layout_marginLeft">@dimen/common_edit_pwd_icon_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/common_edit_pwd_icon_margin_right</item>
+        <item name="android:checked">false</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="CommonTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_normal</item>
+        <item name="android:textColor">@color/common_text_color_normal</item>
+        <item name="android:lineSpacingExtra">2.0dip</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+    </style>
+    <style name="CommonTextAppearanceBlue" parent="@style/CommonTextAppearance">
+        <item name="android:textColor">@color/common_text_color_blue</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="CommonTextAppearanceSub" parent="@style/CommonTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_sub</item>
+        <item name="android:textColor">@color/common_text_color_sub</item>
+    </style>
+    <style name="CommonTextAppearanceNormalSubColor" parent="@style/CommonTextAppearance">
+        <item name="android:textColor">@color/common_text_color_sub</item>
+    </style>
+    <style name="CommonTextAppearanceNormalSubSize" parent="@style/CommonTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_sub</item>
+    </style>
+    <style name="CommonTextAppearanceNormalSmallSize" parent="@style/CommonTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_normal_small</item>
+    </style>
+    <style name="CommonTextAppearanceSubSmallSize" parent="@style/CommonTextAppearanceSub">
+        <item name="android:textSize">@dimen/common_text_size_normal_small</item>
+    </style>
+    <style name="CommonTextAppearanceMiddleBlack" parent="@style/CommonTextAppearance">
+        <item name="android:textColor">@color/common_text_color_normal_another</item>
+    </style>
+    <style name="CommonTextAppearanceLarge" parent="@style/CommonTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+    </style>
+    <style name="CommonTextAppearanceLargeSub" parent="@style/CommonTextAppearance">
+        <item name="android:textSize">@dimen/common_text_size_large</item>
+        <item name="android:textColor">@color/common_text_color_sub</item>
+    </style>
+    <style name="CommonBtnAppearanceGray" parent="@style/CommonTextAppearance">
+        <item name="android:textColor">@color/common_item_sub_text_color</item>
+    </style>
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">高速交警</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_my">Details</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="account_login_native_edit_acc">请输入账号</string>
+    <string name="account_title">账号</string>
+    <string name="password_title">密码</string>
+    <string name="account_login_native_edit_pass">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="user_name_input_error_empty">用户名不能为空</string>
+    <string name="pwd_input_error_empty">密码不能为空</string>
+    <string name="bar_search">查询</string>
+    <string name="video_frag">视频</string>
+    <string name="photo_frag">图片</string>
+    <string name="driver_frag">驾驶员</string>
+    <string name="car_frag">车辆</string>
+    <string name="car_title">车辆详情</string>
+    <string name="driver_title">驾驶员详情</string>
+    <string name="up_photo_frag">图片上传</string>
+    <string name="up_vidio_frag">视频上传</string>
+    <string name="call_police_frag">接处警</string>
+    <string name="danger_frag">危化品登记</string>
+    <string name="pub_frag">客运登记</string>
+    <string name="drawer_open">开</string>
+    <string name="drawer_close">关</string>
+    <string name="drawer_switch">通知开关</string>
+    <string name="drawer_loginout">退出登录</string>
+    <string name="reson">2015年1月7日中午12点,广州大桥发生一起车祸:一辆南往北行驶的面包车突然撞向护栏,十几米护栏飞出砸到北往南方向面包车。</string>
+
+</resources>
