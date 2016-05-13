@@ -3,11 +3,11 @@ import java.io.Serializable;
 /**
  * Created by qiulin on 2015/1/16 0016.
  */
-public class User implements Serializable{
+public class User extends com.example.qiulin.traffic.beans.vo.User implements Serializable{
     private String id;
-    private String userName;
-    private String realName;
-    private String passWord;
+    private String username;
+    private String password;
+    private String name;
 
     public String getId() {
         return id;
@@ -17,27 +17,38 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getRealname() {
+        return name;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setRealname(String realname) {
+        this.name = realname;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

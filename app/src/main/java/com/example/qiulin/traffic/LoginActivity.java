@@ -1,11 +1,14 @@
 package com.example.qiulin.traffic;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,14 +23,17 @@ import com.afollestad.materialdialogs.Theme;
 import com.example.qiulin.traffic.beans.User;
 import com.example.qiulin.traffic.rest.AbstractAsyncActivity;
 import com.example.qiulin.traffic.utils.DataUtil;
+import com.example.qiulin.traffic.utils.okhttputils.OkHttpUtils;
+import com.example.qiulin.traffic.utils.okhttputils.callback.BeanCallBack;
+import com.example.qiulin.traffic.utils.okhttputils.request.PostRequest;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.ResourceAccessException;
-import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * A login screen that offers login via email/password.
@@ -40,7 +46,7 @@ public class LoginActivity extends AbstractAsyncActivity {
     private TextView nameErrorTextView;
     private TextView passwordErrorTextView;
     private CheckBox pwdCheckbox;
-    private User user;
+    private com.example.qiulin.traffic.beans.vo.User user;
     private Button setbtn;
     private Button regbtn;
     @Override
@@ -53,7 +59,6 @@ public class LoginActivity extends AbstractAsyncActivity {
         nameErrorTextView = (TextView) findViewById(R.id.nameErrorTextView);
         passwordErrorTextView = (TextView) findViewById(R.id.passwordErrorTextView);
         pwdCheckbox = (CheckBox) findViewById(R.id.pwdCheckbox);
-        System.out.print(pwdCheckbox.getText());
         btn = (Button) findViewById(R.id.loginBtn);
         setbtn = (Button) findViewById(R.id.setBtn);
         regbtn = (Button) findViewById(R.id.regBtn);
@@ -137,8 +142,36 @@ public class LoginActivity extends AbstractAsyncActivity {
             btn.setEnabled(true);
             return false;
         }
-        String url = "http://" + String.valueOf(DataUtil.getProp(LoginActivity.this, "ip1", "conf")) +"/traffic/car/findcar.do";
-        new HttpTask().execute(userName,pwd,url);
+        String url = DataUtil.getUrl(LoginActivity.this,"login");
+        OkHttpUtils.post(url).tag(this)
+                .params("username", userName)
+                .params("password", pwd)
+                .mediaType(PostRequest.MEDIA_TYPE_PLAIN)//
+                .execute(new BeanCallBack<com.example.qiulin.traffic.beans.vo.User>() {
+                    @Override
+                    public void onResponse(boolean isFromCache, com.example.qiulin.traffic.beans.vo.User user, Request request, @Nullable Response response) {
+                        Log.i("login", user.toString());
+                        if (user.getID() == null) {
+                            btn.setEnabled(true);
+                            passwordErrorTextView.setText("用户名与密码不符");
+                            passwordErrorTextView.setVisibility(View.VISIBLE);
+                            dismissProgressDialog();
+                        } else {
+                            DataUtil.saveDate(LoginActivity.this, user);
+                            Intent intent = new Intent(LoginActivity.this,
+                                    MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                    @Override
+                    public void onError(boolean isFromCache, Call call, @Nullable Response response, @Nullable Exception e) {
+                        btn.setEnabled(true);
+                        passwordErrorTextView.setText("网络连接失败");
+                        passwordErrorTextView.setVisibility(View.VISIBLE);
+                        dismissProgressDialog();
+                    }
+                });
         return true;
     }
     private void hideError(){
@@ -167,66 +200,6 @@ public class LoginActivity extends AbstractAsyncActivity {
             finish();
         }
         Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show();
-    }
-    private class HttpTask extends AsyncTask<String, Void, Integer> {
-
-        @Override
-        protected void onPreExecute() {
-            showLoadingProgressDialog();
-        }
-
-        @Override
-        protected Integer doInBackground(String... params) {
-            try {
-                String userName = params[0];
-                String pwd = params[1];
-                String url = params[2];
-                if("123".equals(userName) && "123".equals(pwd)){
-                    user.setId("1");
-                    user.setUserName(userName);
-                    RestTemplate restTemplate = new RestTemplate();
-                    restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
-                    restTemplate.getForObject(url, String.class).toString();
-                    return 0;
-                }else{
-                    return 2;
-                }
-            } catch (HttpClientErrorException e) {
-                e.printStackTrace();
-            } catch (ResourceAccessException e) {
-                    return 1;
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-            return 1;
-        }
-        @Override
-        protected void onPostExecute(Integer result) {
-//            DataUtil.saveDate(LoginActivity.this, user);
-//            Intent intent = new Intent(LoginActivity.this,
-//                    MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//            return;
-            if (result == 2) {
-                btn.setEnabled(true);
-                passwordErrorTextView.setText("用户名与密码不符");
-                passwordErrorTextView.setVisibility(View.VISIBLE);
-                dismissProgressDialog();
-            } else if (result == 1) {
-                btn.setEnabled(true);
-                passwordErrorTextView.setText("网络连接失败");
-                passwordErrorTextView.setVisibility(View.VISIBLE);
-                dismissProgressDialog();
-            } else {
-                DataUtil.saveDate(LoginActivity.this, user);
-                Intent intent = new Intent(LoginActivity.this,
-                        MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }
-
     }
 }
 

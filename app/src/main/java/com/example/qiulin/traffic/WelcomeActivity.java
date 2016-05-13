@@ -6,9 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v7.app.ActionBarActivity;
 
-import com.example.qiulin.traffic.beans.User;
 import com.example.qiulin.traffic.utils.DataUtil;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,7 +21,7 @@ public class WelcomeActivity extends Activity {
         public void handleMessage(Message msg) {
             if(msg.what == 1314){
                 timer.cancel();
-                User user = DataUtil.getDate(WelcomeActivity.this);
+                com.example.qiulin.traffic.beans.vo.User user = DataUtil.getDate(WelcomeActivity.this);
                 if(null != user){
                     Intent intent = new Intent(WelcomeActivity.this,
                             MainActivity.class);

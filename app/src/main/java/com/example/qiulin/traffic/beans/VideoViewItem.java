@@ -1,7 +1,5 @@
 package com.example.qiulin.traffic.beans;
 
-import android.graphics.drawable.Drawable;
-
 public class VideoViewItem implements Comparable<Object> {
     private String name;
     private int index;

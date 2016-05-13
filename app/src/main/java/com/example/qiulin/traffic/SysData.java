@@ -8,6 +8,7 @@ import android.graphics.Color;
 
 import com.example.qiulin.traffic.beans.GridViewItem;
 import com.example.qiulin.traffic.beans.User;
+import com.example.qiulin.traffic.utils.okhttputils.OkHttpUtils;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 
@@ -41,5 +42,6 @@ public class SysData extends Application{
         mainMenuList.add(new GridViewItem(getResources().getString(R.string.call_police_frag), 6,  new IconicsDrawable(this, FontAwesome.Icon.faw_bell).color(Color.GRAY).actionBarSize()));
         mainMenuList.add(new GridViewItem(getResources().getString(R.string.danger_frag), 7,  new IconicsDrawable(this, FontAwesome.Icon.faw_fire).color(Color.GRAY).actionBarSize()));
         mainMenuList.add(new GridViewItem(getResources().getString(R.string.pub_frag), 8,  new IconicsDrawable(this, FontAwesome.Icon.faw_bus).color(Color.GRAY).actionBarSize()));
+        OkHttpUtils.init(this);
     }
 }

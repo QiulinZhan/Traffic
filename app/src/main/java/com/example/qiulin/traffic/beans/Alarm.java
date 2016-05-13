@@ -4,11 +4,11 @@ package com.example.qiulin.traffic.beans;
  * Created by qiulin on 2015/1/21 0021.
  */
 public class Alarm {
-    private String id;
+    private Long id;
     private String alarmStart;
     private String type;
     private String name;
-    private String sex;
+    private Integer sex;
     private String tel;
     private String address;
     private String content;
@@ -22,12 +22,15 @@ public class Alarm {
     private String reason;
     private String pavement;
     private String carType;
+    private String createTime;
+    private Integer isDel;
+    private Long creater;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -55,11 +58,11 @@ public class Alarm {
         this.name = name;
     }
 
-    public String getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
@@ -167,38 +170,38 @@ public class Alarm {
         this.carType = carType;
     }
 
-    public Alarm() {
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public Alarm(String id, String alarmStart, String type, String name, String sex, String tel, String address, String content, String status, String instructions, String feedback, String police, String alarmEnd, String weather, String accident, String reason, String pavement, String carType) {
-        this.id = id;
-        this.alarmStart = alarmStart;
-        this.type = type;
-        this.name = name;
-        this.sex = sex;
-        this.tel = tel;
-        this.address = address;
-        this.content = content;
-        this.status = status;
-        this.instructions = instructions;
-        this.feedback = feedback;
-        this.police = police;
-        this.alarmEnd = alarmEnd;
-        this.weather = weather;
-        this.accident = accident;
-        this.reason = reason;
-        this.pavement = pavement;
-        this.carType = carType;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
+    }
+
+    public Long getCreater() {
+        return creater;
+    }
+
+    public void setCreater(Long creater) {
+        this.creater = creater;
     }
 
     @Override
     public String toString() {
         return "Alarm{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", alarmStart='" + alarmStart + '\'' +
                 ", type='" + type + '\'' +
                 ", name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
+                ", sex=" + sex +
                 ", tel='" + tel + '\'' +
                 ", address='" + address + '\'' +
                 ", content='" + content + '\'' +
@@ -212,6 +215,9 @@ public class Alarm {
                 ", reason='" + reason + '\'' +
                 ", pavement='" + pavement + '\'' +
                 ", carType='" + carType + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", isDel=" + isDel +
+                ", creater=" + creater +
                 '}';
     }
 }
