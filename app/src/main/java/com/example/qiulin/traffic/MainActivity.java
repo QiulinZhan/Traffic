@@ -27,13 +27,9 @@ import com.example.qiulin.traffic.utils.DataUtil;
 import com.example.qiulin.traffic.utils.DriverData;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.util.StringUtils;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.ResourceAccessException;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by qiulin on 2015/1/16 0016.
