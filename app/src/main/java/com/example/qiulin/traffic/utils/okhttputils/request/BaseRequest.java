@@ -1,4 +1,7 @@
 package com.example.qiulin.traffic.utils.okhttputils.request;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import com.example.qiulin.traffic.utils.okhttputils.OkHttpUtils;
 import com.example.qiulin.traffic.utils.okhttputils.cache.CacheEntity;
@@ -52,7 +55,7 @@ public abstract class BaseRequest<R extends BaseRequest> {
     private AbsCallback mCallback;
     private CacheManager cacheManager;
     private List<Interceptor> interceptors = new ArrayList<>();
-
+    private ProgressDialog progressDialog;
     public BaseRequest(String url) {
         this.url = url;
         OkHttpUtils okHttpUtils = OkHttpUtils.getInstance();
@@ -322,74 +325,80 @@ public abstract class BaseRequest<R extends BaseRequest> {
 
     /** 非阻塞方法，异步请求，但是回调在子线程中执行 */
     @SuppressWarnings("unchecked")
-    public <T> void execute(AbsCallback<T> callback) {
-        mCallback = callback;
-        if (mCallback == null) mCallback = AbsCallback.CALLBACK_DEFAULT;
+    public <T> void execute(AbsCallback<T> callback, Context context) {
+        try{
+            showProgressDialog(context);
+            mCallback = callback;
+            if (mCallback == null) mCallback = AbsCallback.CALLBACK_DEFAULT;
 
-        //请求之前获取缓存信息，添加缓存头和其他的公共头
-        if (cacheKey == null) cacheKey = createUrlFromParams(url, params.urlParamsMap);
-        if (cacheMode == null) cacheMode = CacheMode.DEFAULT;
-        final CacheEntity<T> cacheEntity = (CacheEntity<T>) cacheManager.get(cacheKey);
-        HeaderParser.addDefaultHeaders(this, cacheEntity, cacheMode);
+            //请求之前获取缓存信息，添加缓存头和其他的公共头
+            if (cacheKey == null) cacheKey = createUrlFromParams(url, params.urlParamsMap);
+            if (cacheMode == null) cacheMode = CacheMode.DEFAULT;
+            final CacheEntity<T> cacheEntity = (CacheEntity<T>) cacheManager.get(cacheKey);
+            HeaderParser.addDefaultHeaders(this, cacheEntity, cacheMode);
 
-        //请求执行前UI线程调用
-        mCallback.onBefore(this);
-        RequestBody requestBody = generateRequestBody();
-        Request request = generateRequest(wrapRequestBody(requestBody));
-        Call call = generateCall(request);
+            //请求执行前UI线程调用
+            mCallback.onBefore(this);
+            RequestBody requestBody = generateRequestBody();
+            Request request = generateRequest(wrapRequestBody(requestBody));
+            Call call = generateCall(request);
 
-        if (cacheMode == CacheMode.IF_NONE_CACHE_REQUEST) {
-            //如果没有缓存，就请求网络，否者直接使用缓存
-            if (cacheEntity != null) {
-                T data = cacheEntity.getData();
-                sendSuccessResultCallback(true, data, call, null, mCallback);
-                return;//返回即不请求网络
-            } else {
-                sendFailResultCallback(true, call, null, new IllegalStateException("没有获取到缓存！"), mCallback);
-            }
-        } else if (cacheMode == CacheMode.FIRST_CACHE_THEN_REQUEST) {
-            //先使用缓存，不管是否存在，仍然请求网络
-            if (cacheEntity != null) {
-                T data = cacheEntity.getData();
-                sendSuccessResultCallback(true, data, call, null, mCallback);
-            } else {
-                sendFailResultCallback(true, call, null, new IllegalStateException("没有获取到缓存！"), mCallback);
-            }
-        }
-
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                //请求失败，一般为url地址错误，网络错误等
-                sendFailResultCallback(false, call, null, e, mCallback);
+            if (cacheMode == CacheMode.IF_NONE_CACHE_REQUEST) {
+                //如果没有缓存，就请求网络，否者直接使用缓存
+                if (cacheEntity != null) {
+                    T data = cacheEntity.getData();
+                    sendSuccessResultCallback(true, data, call, null, mCallback);
+                    return;//返回即不请求网络
+                } else {
+                    sendFailResultCallback(true, call, null, new IllegalStateException("没有获取到缓存！"), mCallback);
+                }
+            } else if (cacheMode == CacheMode.FIRST_CACHE_THEN_REQUEST) {
+                //先使用缓存，不管是否存在，仍然请求网络
+                if (cacheEntity != null) {
+                    T data = cacheEntity.getData();
+                    sendSuccessResultCallback(true, data, call, null, mCallback);
+                } else {
+                    sendFailResultCallback(true, call, null, new IllegalStateException("没有获取到缓存！"), mCallback);
+                }
             }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                int responseCode = response.code();
-                //304缓存数据
-                if (responseCode == 304 && cacheMode == CacheMode.DEFAULT) {
-                    if (cacheEntity == null) {
-                        sendFailResultCallback(true, call, response, new IllegalStateException("服务器响应码304，但是客户端没有缓存！"), mCallback);
-                    } else {
-                        T data = cacheEntity.getData();
-                        sendSuccessResultCallback(true, data, call, response, mCallback);
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                    //请求失败，一般为url地址错误，网络错误等
+                    sendFailResultCallback(false, call, null, e, mCallback);
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    int responseCode = response.code();
+                    //304缓存数据
+                    if (responseCode == 304 && cacheMode == CacheMode.DEFAULT) {
+                        if (cacheEntity == null) {
+                            sendFailResultCallback(true, call, response, new IllegalStateException("服务器响应码304，但是客户端没有缓存！"), mCallback);
+                        } else {
+                            T data = cacheEntity.getData();
+                            sendSuccessResultCallback(true, data, call, response, mCallback);
+                        }
+                        return;
                     }
-                    return;
-                }
-                //响应失败，一般为服务器内部错误，或者找不到页面等
-                if (responseCode >= 400 && responseCode <= 599) {
-                    sendFailResultCallback(false, call, response, null, mCallback);
-                    return;
-                }
+                    //响应失败，一般为服务器内部错误，或者找不到页面等
+                    if (responseCode >= 400 && responseCode <= 599) {
+                        sendFailResultCallback(false, call, response, null, mCallback);
+                        return;
+                    }
 
-                T data = (T) mCallback.parseNetworkResponse(response);
-                sendSuccessResultCallback(false, data, call, response, mCallback);
-                //网络请求成功，保存缓存数据
-                handleCache(response.headers(), data);
-            }
-        });
+                    T data = (T) mCallback.parseNetworkResponse(response);
+                    sendSuccessResultCallback(false, data, call, response, mCallback);
+                    //网络请求成功，保存缓存数据
+                    handleCache(response.headers(), data);
+                }
+            });
+        }catch (Exception e){
+            dismissProgressDialog();
+        }
     }
+
 
     /**
      * 请求成功后根据缓存模式，更新缓存数据
@@ -419,6 +428,7 @@ public abstract class BaseRequest<R extends BaseRequest> {
         OkHttpUtils.getInstance().getDelivery().post(new Runnable() {
             @Override
             public void run() {
+                dismissProgressDialog();
                 callback.onError(isFromCache, call, response, e);         //请求失败回调 （UI线程）
                 callback.onAfter(isFromCache, null, call, response, e);   //请求结束回调 （UI线程）
             }
@@ -443,6 +453,7 @@ public abstract class BaseRequest<R extends BaseRequest> {
             @Override
             public void run() {
                 try {
+                    dismissProgressDialog();
                     callback.onResponse(isFromCache, t, call.request(), response);                         //请求成功回调 （UI线程）
                 } catch (JSONException e) {
                     callback.onAfter(isFromCache, t, call, response, null);      //请求结束回调 （UI线程）
@@ -450,5 +461,19 @@ public abstract class BaseRequest<R extends BaseRequest> {
                 }
             }
         });
+    }
+    private void showProgressDialog( Context context) {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(context);
+            progressDialog.setIndeterminate(true);
+        }
+        progressDialog.setMessage("加载中...");
+        progressDialog.show();
+    }
+
+    private void dismissProgressDialog() {
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+        }
     }
 }

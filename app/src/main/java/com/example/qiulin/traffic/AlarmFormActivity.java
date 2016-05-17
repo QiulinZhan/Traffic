@@ -138,7 +138,7 @@ public class AlarmFormActivity extends AppCompatActivity {
                                         AlarmListActivity.launch(AlarmFormActivity.this);
                                     }
                                 }
-                            });
+                            }, AlarmFormActivity.this);
 //                    String str = gson.toJson(list);
 //                    DataUtil.saved(AlarmFormActivity.this, str,"Alarm");
 //                    AlarmListActivity.launch(AlarmFormActivity.this);

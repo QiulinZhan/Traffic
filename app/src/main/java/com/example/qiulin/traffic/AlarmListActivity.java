@@ -119,6 +119,6 @@ public class AlarmListActivity extends AppCompatActivity {
                             listView.setAdapter(mAdapter);
                         }
                     }
-                });
+                }, AlarmListActivity.this);
     }
 }

@@ -150,12 +150,10 @@ public class LoginActivity extends AbstractAsyncActivity {
                 .execute(new BeanCallBack<com.example.qiulin.traffic.beans.vo.User>() {
                     @Override
                     public void onResponse(boolean isFromCache, com.example.qiulin.traffic.beans.vo.User user, Request request, @Nullable Response response) {
-                        Log.i("login", user.toString());
                         if (user.getID() == null) {
                             btn.setEnabled(true);
                             passwordErrorTextView.setText("用户名与密码不符");
                             passwordErrorTextView.setVisibility(View.VISIBLE);
-                            dismissProgressDialog();
                         } else {
                             DataUtil.saveDate(LoginActivity.this, user);
                             Intent intent = new Intent(LoginActivity.this,
@@ -169,9 +167,8 @@ public class LoginActivity extends AbstractAsyncActivity {
                         btn.setEnabled(true);
                         passwordErrorTextView.setText("网络连接失败");
                         passwordErrorTextView.setVisibility(View.VISIBLE);
-                        dismissProgressDialog();
                     }
-                });
+                }, LoginActivity.this);
         return true;
     }
     private void hideError(){
