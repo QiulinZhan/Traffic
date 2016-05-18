@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -17,15 +18,20 @@ import android.widget.Toast;
 
 import com.example.qiulin.traffic.adapter.DangerousListAdapter;
 import com.example.qiulin.traffic.beans.Dangerous;
+import com.example.qiulin.traffic.beans.DataBean;
 import com.example.qiulin.traffic.utils.DataUtil;
 import com.example.qiulin.traffic.utils.Utils;
+import com.example.qiulin.traffic.utils.okhttputils.OkHttpUtils;
+import com.example.qiulin.traffic.utils.okhttputils.callback.BeanCallBack;
+import com.example.qiulin.traffic.utils.okhttputils.request.PostRequest;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by qiulin on 2015/1/20 0020.
@@ -36,18 +42,6 @@ public class DangerousListActivity extends AppCompatActivity {
     private DangerousListAdapter mAdapter;
     private static List<Dangerous> alarmList;
     private ImageButton mFabButton;
-    static {
-
-//        String str = "";
-//        alarmList = new ArrayList<Alarm>();
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-//        alarmList.add(new Alarm("JA1234", null, "小明", str, "2015-01-08"));
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,12 +106,21 @@ public class DangerousListActivity extends AppCompatActivity {
     }
 
     private List<Dangerous> getData() {
-        String data = DataUtil.getd(DangerousListActivity.this, "Dangerous");
-        List<Dangerous> list = new ArrayList<>();
-        if(data != null){
-            list = gson.fromJson(data, new TypeToken<List<Dangerous>>() {
-            }.getType());
-        }
-        return list;
+        String url = DataUtil.getUrl(DangerousListActivity.this,"dangerouslist");
+        OkHttpUtils.post(url).tag(this)
+                .params("rowCountOfOnePage","100")
+                .mediaType(PostRequest.MEDIA_TYPE_PLAIN)//
+                .execute(new BeanCallBack<DataBean<Dangerous>>() {
+                    @Override
+                    public void onResponse(boolean isFromCache, DataBean<Dangerous> data, Request request, @Nullable Response response) {
+                        if(data.getCode() != null && data.getCode() == 0){
+                            alarmList = data.getData();
+                            listView = (ListView) findViewById(R.id.list);
+                            mAdapter = new DangerousListAdapter(DangerousListActivity.this,alarmList);
+                            listView.setAdapter(mAdapter);
+                        }
+                    }
+                }, DangerousListActivity.this);
+        return alarmList;
     }
 }

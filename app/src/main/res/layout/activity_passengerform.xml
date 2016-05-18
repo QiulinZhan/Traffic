@@ -27,7 +27,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/alarmStart" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jcsj" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -41,7 +41,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/type" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/xsztxm" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -55,7 +55,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/ch" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -69,7 +69,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/sex" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jsrjszh" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -83,7 +83,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/tel" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jsrxm" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -97,7 +97,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/address" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jsrjsztxm" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -111,7 +111,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/content" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jsrdh" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -125,7 +125,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jsrxctjrq" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -139,7 +139,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/instructions" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/jsrzzjc" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -153,7 +153,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/feedback" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/xzlb" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -167,7 +167,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/police" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/hdzk" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -181,7 +181,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/alarmEnd" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/sjzk" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -195,7 +195,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/weather" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/cjrq" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -209,6 +209,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/aqss"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
@@ -223,7 +224,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/accident" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/ltms" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -237,6 +238,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/wfjl"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
@@ -251,7 +253,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/reason" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/czqk" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -265,7 +267,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/pavement" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/lxjssj" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>
@@ -279,6 +281,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/djmj"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
@@ -293,6 +296,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/ytglmj"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
@@ -307,7 +311,7 @@
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left"
                     android:layout_marginTop="@dimen/item_icon_left"/>
                 <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/carType" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/bz" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/item_icon_left" android:layout_marginRight="@dimen/item_icon_left" android:layout_marginBottom="30dp"
                     android:textSize="@dimen/text_size" android:textColor="@color/text"/>
             </LinearLayout>

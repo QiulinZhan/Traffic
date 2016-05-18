@@ -4,247 +4,285 @@ package com.example.qiulin.traffic.beans;
  * Created by zhanqiulin on 2016/2/3.
  */
 public class Dangerous {
-    private String id;
-    private String checkTime;
-    private Integer isGua;
-    private String txzNo;
-    private String driverCode;
-    private String driverName;
-    private String nextCheckTime;
-    private String driverCode2;
-    private String zg;
-    private String yyrxm;
-    private String yyz;
-    private String yydh;
+    private Long id;
+    //检查时间
+    private String jcsj;
+    //是否为挂车
+    private Integer sfgc;
+    //通行证编号
+    private String txzbh;
+    //行驶证条形码
+    private String xsztxm;
+    //驾驶人驾驶证号
+    private String jsrjszh;
+    //驾驶人姓名
+    private String jsrxm;
+    //驾驶人下次体检日期
+    private String jsrxctjrq;
+    //驾驶人驾驶证条形码
+    private String jsrjsztxm;
+    //驾驶人驾驶资格
+    private String jsrjszg;
+    //押运员姓名
+    private String yyyxm;
+    //押运员押运证
+    private String yyyyyz;
+    //押运员电话
+    private String yyydh;
+    //供货厂家名称
     private String ghcjmc;
+    //供货厂家联系人
     private String ghcjlxr;
+    //供货厂家电话
     private String ghcjdh;
+    //核载质量
     private String hzzl;
+    //实载质量
     private String szzl;
+    //企业等级
     private String qydj;
+    //货物性质
     private String hwxz;
-    private String clxcjyrq;
+    //车辆下次检验日期
+    private String cjrq;
+    //安全设施
     private String aqss;
+    //轮胎磨损
     private String ltms;
+    //违法记录
     private String wfjl;
+    //登记民警
     private String djmj;
+    //源头管理民警
     private String ytglmj;
-    private String yjcli;
+    //应急处理办法
+    private String yjclbf;
+    //备注
     private String bz;
-
-    public String getId() {
+    private String createTime;
+    private Integer isDel;
+    private Long creater;
+    public Long getId() {
         return id;
     }
-
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
-
-    public String getCheckTime() {
-        return checkTime;
+    public String getJcsj() {
+        return jcsj;
     }
-
-    public void setCheckTime(String checkTime) {
-        this.checkTime = checkTime;
+    public void setJcsj(String jcsj) {
+        this.jcsj = jcsj;
     }
-
-    public Integer getIsGua() {
-        return isGua;
+    public Integer getSfgc() {
+        return sfgc;
     }
-
-    public void setIsGua(Integer isGua) {
-        this.isGua = isGua;
+    public void setSfgc(Integer sfgc) {
+        this.sfgc = sfgc;
     }
-
-    public String getTxzNo() {
-        return txzNo;
+    public String getTxzbh() {
+        return txzbh;
     }
-
-    public void setTxzNo(String txzNo) {
-        this.txzNo = txzNo;
+    public void setTxzbh(String txzbh) {
+        this.txzbh = txzbh;
     }
-
-    public String getDriverCode() {
-        return driverCode;
+    public String getXsztxm() {
+        return xsztxm;
     }
-
-    public void setDriverCode(String driverCode) {
-        this.driverCode = driverCode;
+    public void setXsztxm(String xsztxm) {
+        this.xsztxm = xsztxm;
     }
-
-    public String getDriverName() {
-        return driverName;
+    public String getJsrjszh() {
+        return jsrjszh;
     }
-
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
+    public void setJsrjszh(String jsrjszh) {
+        this.jsrjszh = jsrjszh;
     }
-
-    public String getNextCheckTime() {
-        return nextCheckTime;
+    public String getJsrxm() {
+        return jsrxm;
     }
-
-    public void setNextCheckTime(String nextCheckTime) {
-        this.nextCheckTime = nextCheckTime;
+    public void setJsrxm(String jsrxm) {
+        this.jsrxm = jsrxm;
     }
-
-    public String getDriverCode2() {
-        return driverCode2;
+    public String getJsrxctjrq() {
+        return jsrxctjrq;
     }
-
-    public void setDriverCode2(String driverCode2) {
-        this.driverCode2 = driverCode2;
+    public void setJsrxctjrq(String jsrxctjrq) {
+        this.jsrxctjrq = jsrxctjrq;
     }
-
-    public String getZg() {
-        return zg;
+    public String getJsrjsztxm() {
+        return jsrjsztxm;
     }
-
-    public void setZg(String zg) {
-        this.zg = zg;
+    public void setJsrjsztxm(String jsrjsztxm) {
+        this.jsrjsztxm = jsrjsztxm;
     }
-
-    public String getYyrxm() {
-        return yyrxm;
+    public String getJsrjszg() {
+        return jsrjszg;
     }
-
-    public void setYyrxm(String yyrxm) {
-        this.yyrxm = yyrxm;
+    public void setJsrjszg(String jsrjszg) {
+        this.jsrjszg = jsrjszg;
     }
-
-    public String getYyz() {
-        return yyz;
+    public String getYyyxm() {
+        return yyyxm;
     }
-
-    public void setYyz(String yyz) {
-        this.yyz = yyz;
+    public void setYyyxm(String yyyxm) {
+        this.yyyxm = yyyxm;
     }
-
-    public String getYydh() {
-        return yydh;
+    public String getYyyyyz() {
+        return yyyyyz;
     }
-
-    public void setYydh(String yydh) {
-        this.yydh = yydh;
+    public void setYyyyyz(String yyyyyz) {
+        this.yyyyyz = yyyyyz;
     }
-
+    public String getYyydh() {
+        return yyydh;
+    }
+    public void setYyydh(String yyydh) {
+        this.yyydh = yyydh;
+    }
     public String getGhcjmc() {
         return ghcjmc;
     }
-
     public void setGhcjmc(String ghcjmc) {
         this.ghcjmc = ghcjmc;
     }
-
     public String getGhcjlxr() {
         return ghcjlxr;
     }
-
     public void setGhcjlxr(String ghcjlxr) {
         this.ghcjlxr = ghcjlxr;
     }
-
     public String getGhcjdh() {
         return ghcjdh;
     }
-
     public void setGhcjdh(String ghcjdh) {
         this.ghcjdh = ghcjdh;
     }
-
     public String getHzzl() {
         return hzzl;
     }
-
     public void setHzzl(String hzzl) {
         this.hzzl = hzzl;
     }
-
     public String getSzzl() {
         return szzl;
     }
-
     public void setSzzl(String szzl) {
         this.szzl = szzl;
     }
-
     public String getQydj() {
         return qydj;
     }
-
     public void setQydj(String qydj) {
         this.qydj = qydj;
     }
-
     public String getHwxz() {
         return hwxz;
     }
-
     public void setHwxz(String hwxz) {
         this.hwxz = hwxz;
     }
-
-    public String getClxcjyrq() {
-        return clxcjyrq;
+    public String getCjrq() {
+        return cjrq;
     }
-
-    public void setClxcjyrq(String clxcjyrq) {
-        this.clxcjyrq = clxcjyrq;
+    public void setCjrq(String cjrq) {
+        this.cjrq = cjrq;
     }
-
     public String getAqss() {
         return aqss;
     }
-
     public void setAqss(String aqss) {
         this.aqss = aqss;
     }
-
     public String getLtms() {
         return ltms;
     }
-
     public void setLtms(String ltms) {
         this.ltms = ltms;
     }
-
     public String getWfjl() {
         return wfjl;
     }
-
     public void setWfjl(String wfjl) {
         this.wfjl = wfjl;
     }
-
     public String getDjmj() {
         return djmj;
     }
-
     public void setDjmj(String djmj) {
         this.djmj = djmj;
     }
-
     public String getYtglmj() {
         return ytglmj;
     }
-
     public void setYtglmj(String ytglmj) {
         this.ytglmj = ytglmj;
     }
-
-    public String getYjcli() {
-        return yjcli;
+    public String getYjclbf() {
+        return yjclbf;
     }
-
-    public void setYjcli(String yjcli) {
-        this.yjcli = yjcli;
+    public void setYjclbf(String yjclbf) {
+        this.yjclbf = yjclbf;
     }
-
     public String getBz() {
         return bz;
     }
-
     public void setBz(String bz) {
         this.bz = bz;
+    }
+    public String getCreateTime() {
+        return createTime;
+    }
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+    public Integer getIsDel() {
+        return isDel;
+    }
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
+    }
+    public Long getCreater() {
+        return creater;
+    }
+    public void setCreater(Long creater) {
+        this.creater = creater;
+    }
+
+    @Override
+    public String toString() {
+        return "Dangerous{" +
+                "id=" + id +
+                ", jcsj='" + jcsj + '\'' +
+                ", sfgc=" + sfgc +
+                ", txzbh='" + txzbh + '\'' +
+                ", xsztxm='" + xsztxm + '\'' +
+                ", jsrjszh='" + jsrjszh + '\'' +
+                ", jsrxm='" + jsrxm + '\'' +
+                ", jsrxctjrq='" + jsrxctjrq + '\'' +
+                ", jsrjsztxm='" + jsrjsztxm + '\'' +
+                ", jsrjszg='" + jsrjszg + '\'' +
+                ", yyyxm='" + yyyxm + '\'' +
+                ", yyyyyz='" + yyyyyz + '\'' +
+                ", yyydh='" + yyydh + '\'' +
+                ", ghcjmc='" + ghcjmc + '\'' +
+                ", ghcjlxr='" + ghcjlxr + '\'' +
+                ", ghcjdh='" + ghcjdh + '\'' +
+                ", hzzl='" + hzzl + '\'' +
+                ", szzl='" + szzl + '\'' +
+                ", qydj='" + qydj + '\'' +
+                ", hwxz='" + hwxz + '\'' +
+                ", cjrq='" + cjrq + '\'' +
+                ", aqss='" + aqss + '\'' +
+                ", ltms='" + ltms + '\'' +
+                ", wfjl='" + wfjl + '\'' +
+                ", djmj='" + djmj + '\'' +
+                ", ytglmj='" + ytglmj + '\'' +
+                ", yjclbf='" + yjclbf + '\'' +
+                ", bz='" + bz + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", isDel=" + isDel +
+                ", creater=" + creater +
+                '}';
     }
 }

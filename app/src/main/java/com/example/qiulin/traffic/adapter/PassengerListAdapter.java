@@ -4,23 +4,21 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.qiulin.traffic.R;
-import com.example.qiulin.traffic.beans.Alarm;
-import com.example.qiulin.traffic.beans.Dangerous;
+import com.example.qiulin.traffic.beans.Passenger;
 
 import java.util.List;
 
 /**
  * Created by qiulin on 2015/1/19 0019.
  */
-public class DangerousListAdapter extends BaseAdapter {
+public class PassengerListAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
-    private List<Dangerous> list;
-    public DangerousListAdapter(Context context, List<Dangerous> list) {
+    private List<Passenger> list;
+    public PassengerListAdapter(Context context, List<Passenger> list) {
         this.list = list;
         layoutInflater = LayoutInflater.from(context);
     }
@@ -51,13 +49,12 @@ public class DangerousListAdapter extends BaseAdapter {
         TextView type = (TextView) view.findViewById(R.id.type);
         TextView  name = (TextView) view.findViewById(R.id.name);
         TextView content = (TextView) view.findViewById(R.id.content);
-        Dangerous item = list.get(position);
+        Passenger item = list.get(position);
         //获取自定义的类实例
-        time.setText(item.getCjrq());
+        time.setText(item.getJcsj());
         type.setText(item.getDjmj());
         name.setText(item.getJsrxm());
         content.setText(item.getBz());
         return view;
     }
-
 }

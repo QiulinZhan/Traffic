@@ -31,5 +31,9 @@
     <string name="drawer_switch">通知开关</string>
     <string name="drawer_loginout">退出登录</string>
     <string name="reson">2015年1月7日中午12点,广州大桥发生一起车祸:一辆南往北行驶的面包车突然撞向护栏,十几米护栏飞出砸到北往南方向面包车。</string>
-
+    <string name="cancel">取消</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="date">日</string>
+    <string name="setting">设置</string>
 </resources>

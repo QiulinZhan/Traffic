@@ -17,6 +17,8 @@
         <item name="spinBars">false</item>
         <item name="color">@color/white</item>
     </style>
+    <style name="Dialog">
+    </style>
 
     <style name="BaseTheme.Dialog" parent="Theme.AppCompat.Dialog">
         <item name="colorPrimary">@color/theme_default_primary</item>

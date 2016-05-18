@@ -108,6 +108,7 @@ public class AlarmListActivity extends AppCompatActivity {
     private void getData() {
         String url = DataUtil.getUrl(AlarmListActivity.this,"alertlist");
         OkHttpUtils.post(url).tag(this)
+                .params("rowCountOfOnePage","100")
                 .mediaType(PostRequest.MEDIA_TYPE_PLAIN)//
                 .execute(new BeanCallBack<DataBean<Alarm>>() {
                     @Override

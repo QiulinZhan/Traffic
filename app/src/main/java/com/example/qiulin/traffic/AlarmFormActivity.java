@@ -1,6 +1,7 @@
 package com.example.qiulin.traffic;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,9 +9,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.qiulin.traffic.adapter.AlarmListAdapter;
@@ -18,6 +23,7 @@ import com.example.qiulin.traffic.beans.Alarm;
 import com.example.qiulin.traffic.beans.Code;
 import com.example.qiulin.traffic.beans.DataBean;
 import com.example.qiulin.traffic.beans.vo.User;
+import com.example.qiulin.traffic.layout.DateTimePickDialogUtil;
 import com.example.qiulin.traffic.utils.CreateSql;
 import com.example.qiulin.traffic.utils.DataUtil;
 import com.example.qiulin.traffic.utils.DateUtil;
@@ -34,6 +40,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -64,6 +71,14 @@ public class AlarmFormActivity extends AppCompatActivity {
             }
         });
         alarmStart = (MaterialEditText) findViewById(R.id.alarmStart);
+
+        alarmStart.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+                        AlarmFormActivity.this, alarmStart.getText().toString());
+                dateTimePicKDialog.dateTimePicKDialog(alarmStart);
+            }
+        });
         type = (MaterialEditText) findViewById(R.id.type);
         name = (MaterialEditText) findViewById(R.id.name);
         sex = (MaterialEditText) findViewById(R.id.sex);
@@ -75,6 +90,13 @@ public class AlarmFormActivity extends AppCompatActivity {
         feedback = (MaterialEditText) findViewById(R.id.feedback);
         police = (MaterialEditText) findViewById(R.id.police);
         alarmEnd = (MaterialEditText) findViewById(R.id.alarmEnd);
+        alarmEnd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+                        AlarmFormActivity.this, alarmEnd.getText().toString());
+                dateTimePicKDialog.dateTimePicKDialog(alarmEnd);
+            }
+        });
         weather = (MaterialEditText) findViewById(R.id.weather);
         accident = (MaterialEditText) findViewById(R.id.accident);
         reason = (MaterialEditText) findViewById(R.id.reason);
@@ -155,7 +177,6 @@ public class AlarmFormActivity extends AppCompatActivity {
         Intent intent = new Intent(activity, AlarmFormActivity.class);
         ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
