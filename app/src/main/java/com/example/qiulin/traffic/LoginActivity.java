@@ -164,9 +164,14 @@ public class LoginActivity extends AbstractAsyncActivity {
                     }
                     @Override
                     public void onError(boolean isFromCache, Call call, @Nullable Response response, @Nullable Exception e) {
-                        btn.setEnabled(true);
-                        passwordErrorTextView.setText("网络连接失败");
-                        passwordErrorTextView.setVisibility(View.VISIBLE);
+//                        btn.setEnabled(true);
+//                        passwordErrorTextView.setText("网络连接失败");
+//                        passwordErrorTextView.setVisibility(View.VISIBLE);
+                        DataUtil.saveDate(LoginActivity.this, user);
+                        Intent intent = new Intent(LoginActivity.this,
+                                MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }, LoginActivity.this);
         return true;
